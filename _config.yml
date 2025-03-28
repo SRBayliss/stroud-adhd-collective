@@ -1,6 +1,5 @@
 title: "Stroud ADHD Collective"
-description: "A website for showcasing the recent activity of and events hosted by a group of ADHDers local to Stroud, Gloucestershire."
-show_downloads: false
+description: "Peer Support and Social Group local to Stroud, Gloucestershire."
 google_analytics: ""
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
