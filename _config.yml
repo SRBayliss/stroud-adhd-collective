@@ -1,5 +1,6 @@
 title: "Stroud ADHD Collective"
 description: "Peer Support and Social Group local to Stroud, Gloucestershire."
+root_url: "https://srbayliss.github.io/stroud-adhd-collective/"
 google_analytics: ""
 remote_theme: pages-themes/cayman@v0.2.0
 plugins:
