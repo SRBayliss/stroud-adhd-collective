@@ -1,0 +1,6 @@
+- name: Home
+  link: /index.html
+- name: Readme
+  link: /readme.html
+- name: Example
+  link: /pages/example.html

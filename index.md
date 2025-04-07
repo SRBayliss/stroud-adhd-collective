@@ -1,3 +1,3 @@
 ---
 ---
-This is some example content. I understand the relationship now.
+This is the home page content. This is the first thing to change.

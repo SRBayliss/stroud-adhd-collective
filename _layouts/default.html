@@ -19,10 +19,15 @@
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
     </header>
-
+    <nav>
+      {% for item in site.data.navigation %}
+        <a href="{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+          {{ item.name }}
+        </a>
+      {% endfor %}
+    </nav>
     <main id="content" class="main-content" role="main">
       {{ content }}
-
       <footer class="site-footer">
         <span>
           We try to put our website content together with neurodivergent people in mind.<br/>
