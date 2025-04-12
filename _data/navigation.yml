@@ -1,4 +1,6 @@
 - name: Home
-  link: index.html
+  link: 
 - name: Example
-  link: pages/example.html
+  link: example
+- name: About
+  link: about

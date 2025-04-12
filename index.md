@@ -1,3 +1,6 @@
 ---
+layout: default
+title: Home
 ---
-This is the home page content. This is the first thing to change.
+# This is a title on the home page
+This is the first thing to change.

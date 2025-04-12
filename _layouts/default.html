@@ -2,26 +2,24 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   <head>
     <meta charset="UTF-8">
-
-{% seo %}
+    {% seo %}
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    {% include head-custom.html %}
+    {% include head.html %}
   </head>
   <body>
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
+      {% include header.html %}
     </header>
     <nav>
       {% for item in site.data.navigation %}
-        <a href="{{ site.root_url }}{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
+        <a href="/{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
           {{ item.name }}
         </a>
       {% endfor %}
@@ -29,13 +27,7 @@
     <main id="content" class="main-content" role="main">
       {{ content }}
       <footer class="site-footer">
-        <span>
-          We try to put our website content together with neurodivergent people in mind.<br/>
-          If you have any issues, please <a href=https://github.com/SRBayliss/stroud-adhd-collective/issues/new/choose>raise them with us</a> and we'll act on them as soon as we can.
-        </span>
-        <span class="site-footer-owner">            
-            <a href="{{ site.github.repository_url }}">{{ site.github.repository_name }}</a> is maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a>.
-        </span>          
+        {% include footer.html %}       
       </footer>
     </main>
   </body>

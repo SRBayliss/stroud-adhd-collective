@@ -1,4 +1,2 @@
-This will be the website for the Stroud ADHD Collective.
-
-# Test 
-This shouldn't be a page people go to unless entirely intentionally.
+This is a Jekyll launchpad from which to build simple websites on GitHub Pages. 
+I have used this in combination with the Cayman theme so that simple websites can be thrown up easily.
