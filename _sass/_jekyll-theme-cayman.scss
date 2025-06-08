@@ -145,6 +145,10 @@ a {
   }
 }
 
+.header-link:hover  {
+  text-decoration: none;
+}
+
 .project-name {
   margin-top: 0;
   margin-bottom: 0.1rem;
@@ -291,7 +295,7 @@ a {
     th,
     td {
       padding: 0.5rem 1rem;
-      border: 1px solid variables.$table-border-color;
+      border: 0px solid variables.$table-border-color;
     }
   }
 

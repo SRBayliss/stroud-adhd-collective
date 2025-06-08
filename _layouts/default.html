@@ -12,18 +12,18 @@
     {% include head.html %}
   </head>
   <body>
-    <a id="skip-to-content" href="#content">Skip to the content.</a>
-
-    <header class="page-header" role="banner">
-      {% include header.html %}
-    </header>
-    <nav>
+    <a href="/" class="header-link">
+      <header class="page-header" role="banner">
+        {% include header.html %}
+      </header>
+    </a>
+    <!-- <nav>
       {% for item in site.data.navigation %}
         <a href="/{{ item.link }}" {% if page.url == item.link %}style="color: red;"{% endif %}>
           {{ item.name }}
         </a>
       {% endfor %}
-    </nav>
+    </nav> -->
     <main id="content" class="main-content" role="main">
       {{ content }}
       <footer class="site-footer">

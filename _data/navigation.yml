@@ -1,6 +1,7 @@
-- name: Home
-  link: 
-- name: Example
-  link: example
-- name: About
-  link: about
+# - name: Home
+#   link: 
+# - name: Example
+#   link: example
+# - name: About
+#   link: about
+# This has also been commented out in _layouts/default.html
