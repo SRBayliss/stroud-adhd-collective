@@ -53,6 +53,8 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: variables.$body-text-color;
+  background-color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 #skip-to-content {
@@ -349,4 +351,125 @@ a {
 
 .site-footer-credits {
   color: variables.$blockquote-text-color;
+}
+
+// Dark mode toggle button
+.dark-mode-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: variables.$brand-grey-dark;
+  color: variables.$brand-yellow-bee;
+  border: 2px solid variables.$brand-yellow-bee;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  padding: 0;
+  line-height: 1;
+
+  &:hover {
+    background-color: variables.$brand-yellow-bee;
+    color: variables.$brand-black;
+    text-decoration: none;
+  }
+
+  &:focus {
+    outline: 3px solid variables.$brand-yellow-bee;
+    outline-offset: 2px;
+  }
+}
+
+// Dark mode styles
+@mixin dark-mode-styles {
+  body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+  }
+
+  a {
+    color: #58a6ff;
+  }
+
+  nav {
+    background-color: #161b22;
+  }
+
+  .main-content {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: variables.$section-headings-color;
+    }
+
+    pre,
+    code {
+      background-color: #161b22;
+      color: #c9d1d9;
+    }
+
+    blockquote {
+      color: #8b949e;
+      border-left-color: #30363d;
+    }
+
+    kbd {
+      background-color: #161b22;
+      border-color: #3d444d;
+      border-bottom-color: #3d444d;
+      box-shadow: inset 0 -1px 0 #3d444d;
+      color: #c9d1d9;
+    }
+
+    table {
+      th,
+      td {
+        border-color: #30363d;
+      }
+    }
+
+    hr {
+      background-color: #21262d;
+    }
+  }
+
+  .site-footer {
+    border-top-color: #30363d;
+  }
+
+  .site-footer-credits {
+    color: #8b949e;
+  }
+
+  .dark-mode-toggle {
+    background-color: #161b22;
+    border-color: variables.$brand-yellow-bee;
+    color: variables.$brand-yellow-bee;
+
+    &:hover {
+      background-color: variables.$brand-yellow-bee;
+      color: variables.$brand-black;
+    }
+  }
+}
+
+// Apply dark mode when explicitly set via toggle
+[data-theme="dark"] {
+  @include dark-mode-styles;
+}
+
+// Apply dark mode based on system preference (unless user explicitly chose light)
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) {
+    @include dark-mode-styles;
+  }
 }

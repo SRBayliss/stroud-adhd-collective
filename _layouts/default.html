@@ -10,6 +10,15 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision }}">
     {% include head.html %}
+    <script>
+      // Restore saved theme immediately to avoid flash of incorrect theme
+      (function () {
+        var stored = localStorage.getItem('theme');
+        if (stored) {
+          document.documentElement.setAttribute('data-theme', stored);
+        }
+      }());
+    </script>
   </head>
   <body>
     <a href="/" class="header-link">
@@ -30,5 +39,46 @@
         {% include footer.html %}       
       </footer>
     </main>
+    <button class="dark-mode-toggle" id="dark-mode-toggle" aria-label="Toggle colour theme">
+      🌙
+    </button>
+    <script>
+      (function () {
+        var toggle = document.getElementById('dark-mode-toggle');
+        var html = document.documentElement;
+
+        function isDarkMode() {
+          var theme = html.getAttribute('data-theme');
+          if (theme === 'dark') return true;
+          if (theme === 'light') return false;
+          return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        }
+
+        function updateToggle() {
+          var dark = isDarkMode();
+          toggle.textContent = dark ? '☀️' : '🌙';
+          toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+          toggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+        }
+
+        updateToggle();
+
+        toggle.addEventListener('click', function () {
+          var dark = isDarkMode();
+          var newTheme = dark ? 'light' : 'dark';
+          html.setAttribute('data-theme', newTheme);
+          localStorage.setItem('theme', newTheme);
+          updateToggle();
+        });
+
+        if (window.matchMedia) {
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function () {
+            if (!localStorage.getItem('theme')) {
+              updateToggle();
+            }
+          });
+        }
+      }());
+    </script>
   </body>
 </html>
