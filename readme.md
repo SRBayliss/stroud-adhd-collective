@@ -1,2 +1,1 @@
-This is a Jekyll launchpad from which to build simple websites on GitHub Pages. 
-I have used this in combination with the Cayman theme so that simple websites can be thrown up easily.
+This is a simple website built on Jekyll and hosted on GitHub Pages for Stroud ADHD Group, a peer support group in Gloucestershire.
